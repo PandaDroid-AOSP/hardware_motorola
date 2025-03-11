@@ -3,6 +3,9 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+soong_namespace {
+}
+
 install_symlink {
     name: "vendor_fsg_mountpoint",
     vendor: true,
