@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2025 The LineageOS Project
+// SPDX-FileCopyrightText: The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
 
@@ -7,8 +7,33 @@ soong_namespace {
 }
 
 install_symlink {
-    name: "vendor_fsg_mountpoint",
+    name: "rfs_mdm_mpss_readonly_vendor_fsg_symlink",
     vendor: true,
-    installed_location: "fsg/.keep",
-    symlink_target: "/dev/null",
+    installed_location: "rfs/mdm/mpss/readonly/vendor/fsg",
+    symlink_target: "/vendor/fsg",
+}
+
+install_symlink {
+    name: "rfs_msm_mpss_readonly_vendor_fsg_symlink",
+    vendor: true,
+    installed_location: "rfs/msm/mpss/readonly/vendor/fsg",
+    symlink_target: "/vendor/fsg",
+}
+
+mkdir {
+    name: "vendor_fsg_mountpoint",
+    dir: "fsg",
+    vendor: true,
+}
+
+mkdir {
+    name: "vendor_super_fsg_mountpoint",
+    dir: "super_fsg",
+    vendor: true,
+}
+
+mkdir {
+    name: "vendor_super_modem_mountpoint",
+    dir: "super_modem",
+    vendor: true,
 }
